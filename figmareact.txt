@@ -1,0 +1,109 @@
+Tailwind CSSプラグインの導入手順
+
+Figmaでプラグインを探す
+
+メニューから → Resources（リソース） → Plugins タブを開く
+
+検索欄に「Tailwind」と入力
+
+「Tailwind CSS」というプラグインが出てくるからインストール
+
+プラグインを起動する
+
+デザイン上でオブジェクトを選択
+
+右クリック → Plugins → Tailwind CSS
+
+プラグインのウィンドウが出て、対応するTailwindクラスが表示される
+
+TailwindクラスをコピーしてReactに貼り付け
+
+例：Figmaのボタンが #2563EB の青背景・高さ48px・角丸8px なら
+プラグインがこんなクラスを提案してくれる：
+-----------------------------------------------------------------------
+
+Locofy.ai を使う方法（React/Tailwind対応）
+
+Figmaにプラグインを追加
+
+Figmaで → Resources (リソース) → Plugins → 検索で「Locofy」
+
+「Locofy.ai」をインストール
+
+Figmaデザインを準備
+
+レイヤーにちゃんと名前をつける（例: Button / Primary）
+
+Auto Layoutを使っておくと綺麗にコード化される
+
+プラグインを実行
+
+デザイン上で右クリック → Plugins → Locofy.ai
+
+プラグイン内で「このボタンはButtonコンポーネント」みたいにマッピングできる
+
+コードを生成
+
+Locofyプラグインから「Export Code」選択
+
+React（＋Tailwind） or Next.js を選べる
+
+zipでReactプロジェクト一式を出力できる
+
+
+-------------------------------
+Reactプロジェクト一式を出力した後の流れ
+
+コードを手元に落とす
+
+Locofy/Animaから zip で出力したReactプロジェクトをダウンロード
+
+Windowsなら解凍して、VSCodeでそのフォルダを開く
+
+Node.jsをインストール
+
+ReactはNode.jsの上で動くから、まず Node.js LTS
+ を入れる
+
+インストールすると npm（パッケージ管理ツール）も一緒に入る
+
+node -v
+npm -v
+
+
+で確認できる
+
+依存パッケージをインストール
+
+プロジェクトのフォルダに移動して
+
+npm install
+
+
+を実行
+
+これで必要なライブラリ（React/Tailwindなど）が全部入る
+
+ローカルで起動して確認
+
+プロジェクト内で
+
+npm run dev
+
+
+または
+
+npm start
+
+
+を実行
+
+ブラウザで http://localhost:3000 を開けば、Figmaから出力したサイトが動く
+
+デプロイ（公開）
+
+社内向けならAWS S3 + CloudFrontにデプロイが簡単
+
+GitHubにpushして、Vercel
+ や Netlify
+ に連携すると、1クリックで公開できる
